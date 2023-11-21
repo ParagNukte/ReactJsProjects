@@ -20,28 +20,21 @@ function PassGen() {
 		if (isCharChecked) {
 			characters = "~!@#$%^&*()_+|}{“:?><[];',./-=" + characters;
 		}
-
 		let result = "";
-
 		for (let i = 0; i < length; i++) {
-			/* empty */
+			
 			result += characters.charAt(
 				Math.floor(Math.random() * characters.length),
 			);
-			// setPassStr(result);
 		}
-
-		return result;
+		return result
 	};
 
 	useEffect(() => {
-		// setStartTime(performance.now());
-
 		const newPassStr = password_generator(length);
 		if (passStr !== newPassStr) {
 			setPassStr(newPassStr);
 		}
-		// setExecutionTime(performance.now() - startTime);
 	}, [length, isNumberChecked, isCharChecked]);
 
 	return (
@@ -59,7 +52,6 @@ function PassGen() {
 					Copy
 				</button>
 			</div>
-			{/* <div className="input_containers"> */}
 				<div className="input_range_container">
 					<input
 						type="range"
