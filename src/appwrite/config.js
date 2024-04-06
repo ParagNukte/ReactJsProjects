@@ -1,4 +1,4 @@
-/* eslint-disable no-useless-catch */
+ /* eslint-disable no-useless-catch */
 /* eslint-disable no-unused-vars */
 import conf from "../conf/conf";
 import { Client, Databases, ID, Storage, Query } from "appwrite";
