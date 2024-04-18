@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -16,7 +17,7 @@ function Protected({ children, authentication = true }) {
     setLoader(false);
   }, [authStatus, authentication, navigate]);
 
-  return <div></div>;
+  return loader ? <h1>Loading . . . </h1> : <>{children}</>;
 }
 
 export default Protected;
