@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import Service from "../../appwrite/config";
+import Service from "../appwrite/config";
 import { Link } from "react-router-dom";
 
 function PostCard({ $id, title, featuredImage }) {
