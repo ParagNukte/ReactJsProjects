@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import appwriteService from "../appwrite/config";
 import { Button } from "../components";
-import { parse } from "html-react-parser";
+import parse from "html-react-parser";
 function Post() {
   const [post, setPost] = useState(null);
   const { slug } = useParams();

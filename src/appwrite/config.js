@@ -30,14 +30,14 @@ export class Service {
   }
 
   async updatePost(
-    Id,
-    { title, slug, content, featuredImage, status, userId }
+    slug,
+    { title,  content, featuredImage, status, userId }
   ) {
     try {
       await this.databases.updateDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
-        Id,
+        slug,
         {
           title,
           content,
@@ -50,12 +50,12 @@ export class Service {
     }
   }
 
-  async deletePost(Id) {
+  async deletePost(slug) {
     try {
       await this.databases.deleteDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
-        Id
+        slug
       );
       return true;
     } catch (error) {
@@ -64,12 +64,12 @@ export class Service {
     }
   }
 
-  async getPost(Id) {
+  async getPost(slug) {
     try {
       return await this.databases.getDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
-        Id
+        slug
       );
     } catch (error) {
       console.error(error);
@@ -118,6 +118,6 @@ export class Service {
   }
 }
 
-const service = new Service(conf.appwriteUrl, conf.appwriteProjectId);
+const appwriteService = new Service(conf.appwriteUrl, conf.appwriteProjectId);
 
-export default Service;
+export default appwriteService;
