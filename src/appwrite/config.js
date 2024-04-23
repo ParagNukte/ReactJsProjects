@@ -1,4 +1,4 @@
- /* eslint-disable no-useless-catch */
+/* eslint-disable no-useless-catch */
 /* eslint-disable no-unused-vars */
 import conf from "../conf/conf";
 import { Client, Databases, ID, Storage, Query } from "appwrite";
@@ -29,10 +29,7 @@ export class Service {
     }
   }
 
-  async updatePost(
-    slug,
-    { title,  content, featuredImage, status, userId }
-  ) {
+  async updatePost(slug, { title, content, featuredImage, status, userId }) {
     try {
       await this.databases.updateDocument(
         conf.appwriteDatabaseId,
@@ -85,13 +82,13 @@ export class Service {
         queries
       );
     } catch (error) {
-      console.log(error);
+      console.log("Get Posts Error:: Config File", error);
     }
   }
 
   //file upload
 
-  async fileUpload(file) {
+  async uploadFile(file) {
     try {
       return await this.bucket.createFile(
         conf.appwriteBucketId,

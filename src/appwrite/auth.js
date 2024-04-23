@@ -7,14 +7,15 @@ export class AuthService {
   client = new Client();
   account;
 
-  constructor(url, projectId) {
-    this.client.setEndpoint(url).setProject(projectId);
+  constructor() {
+    this.client
+      .setEndpoint("https://cloud.appwrite.io/v1")
+      .setProject("6627de282c12549a9f85");
 
     this.account = new Account(this.client);
   }
 
   async createAccount({ email, password, name }) {
-    // eslint-disable-next-line no-useless-catch
     try {
       const userAccount = await this.account.create(
         ID.unique(),
@@ -22,24 +23,22 @@ export class AuthService {
         password,
         name
       );
-
+      console.log(this.account);
       if (userAccount) {
-        //call another method
-        return this.login({ email, password });
-      } else {
+        // call another method
         return userAccount;
       }
     } catch (error) {
-      throw error;
+      console.log("Appwrite serive :: Create Account :: error", error);
     }
   }
 
   async login({ email, password }) {
     try {
-      const signin = await this.account.createEmailSession(email, password);
-      return signin;
+      return await this.account.createEmailSession(email, password);
     } catch (error) {
-      throw error;
+      console.log("Appwrite serive :: Login  :: error", error);
+      // throw error;
     }
   }
 
@@ -47,9 +46,9 @@ export class AuthService {
     try {
       return await this.account.get();
     } catch (error) {
-      throw error;
+      console.log("Appwrite serive :: getCurrentUser :: error", error);
     }
-    // return null;
+    return null;
   }
 
   async signOut() {
@@ -60,7 +59,5 @@ export class AuthService {
     }
   }
 }
-
-const authService = new AuthService(conf.appwriteUrl, conf.appwriteProjectId);
-
+const authService = new AuthService();
 export default authService;
