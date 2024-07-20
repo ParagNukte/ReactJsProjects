@@ -1,0 +1,32 @@
+.navbar {
+   
+        font-family: "Nanum Myeongjo", serif;
+        font-weight: bold;
+        height: 10%;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+}
+.title,
+.title h1 {
+  font-family: "Dancing Script", cursive;
+}
+
+
+.carousel img{
+    width: 100%;
+    /* height: 85vh; */
+}
+
+.col_icon div {
+  margin: auto;
+}
+.col_icon img {
+  width: 20%;
+}
+
+.ourTeam img {
+  max-width: 60%;
+  margin: auto;
+  margin-top: 20px;
+}
