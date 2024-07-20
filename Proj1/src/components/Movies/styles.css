@@ -1,0 +1,32 @@
+.header {
+	display: flex;
+	justify-content: center;
+	background-color: rgb(129, 97, 158);
+	color: rgb(0, 255, 64);
+	font-size: xx-large;
+}
+
+.main {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	padding: 10px;
+	background-color: blue;
+}
+
+.movie-container {
+	background-color: aquamarine;
+	color: black;
+	border: 2px solid gray;
+	font-weight: bold;
+	text-align: start;
+	width: 20%;
+	
+	margin: 10px 2% 20px 2%;
+	
+}
+
+.movie-container img {
+	width: 100%;
+	height: 280px;
+}

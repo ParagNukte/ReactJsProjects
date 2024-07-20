@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Gym Login | Tailwind</title>
+  </head>
+  <body>
+    <div class="flex w-full min-h-screen">
+      <image
+        class="w-1/2 justify-center items-center hidden lg:block"
+        src="/TailwindCssSample/SampleProject/src/assets/gymImage.png"
+      ></image>
+      <div
+        class="flex flex-col justify-center items-center bg-white w-full lg:w-1/2"
+      >
+        <div>
+          <div class="text-xl text-left font-bold lg:text-left">
+            <i class="fa-solid fa-dumbbell mr-2"></i><span>GymFit</span>
+          </div>
+          <div class="text-3xl text-left font-bold lg:text-left">
+            <h2>Hello,</h2>
+            <h2>Welcome Back</h2>
+          </div>
+          <!-- Login Form  -->
+
+          <form action="" class="space-y-2 mt-8 mx-auto lg:w-96">
+            <h4 class="mb-2">Login to manage your account</h4>
+            <input
+              class="mt-4 p-2 text-sm border rounded-lg w-full"
+              type="email"
+              placeholder="Email"
+            />
+            <input
+              class="mt-4 p-2 text-sm border rounded-lg w-full"
+              type="password"
+              placeholder="Password"
+            />
+            <div class="space-y-4">
+              <div
+                class="inline-block ml-2 text-blue-700 cursor-pointer hover:text-blue-400"
+              >
+                Forgot your password?
+              </div>
+              <button class="text-center w-full bg-green-500 rounded-lg py-2">
+                Login
+              </button>
+            </div>
+          </form>
+          <div class="text-center space-y-4">
+            <h3 class="mt-4">or</h3>
+            <div class="flex justify-center gap-5">
+              <i class="fa-brands fa-facebook-f hover:cursor-pointer"></i
+              ><i class="fa-brands fa-google hover:cursor-pointer"></i
+              ><i class="fa-brands fa-github hover:cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="text-center mt-2 text-sm">
+            Don't have account?
+            <span class="text-blue-600 hover:cursor-pointer hover:text-blue-800"
+              >Sign Up!</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
