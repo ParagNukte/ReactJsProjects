@@ -1,5 +1,5 @@
 import "./App.css";
-import Login from "../src/components/BasicForm/Login"
+import Login from "./components/BasicForm/Login"
 function App() {
   return (
     <>
