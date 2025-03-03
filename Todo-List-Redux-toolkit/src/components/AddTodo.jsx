@@ -23,12 +23,13 @@ function AddTodo() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-          <button id="submitButton" type="submit">Enter todo</button>
+          <button id="submitButton" type="submit">
+            Add todo
+          </button>
         </div>
       </form>
     </>
   );
 }
-
 
 export default AddTodo;
