@@ -14,9 +14,6 @@ function App() {
   };
 
   const updateTodo = (id, todo) => {
-    //since the todos list is an arrays so we put map, also we
-    //want to update particular todo then we fetched that todo by ID
-
     setTodos((prev) =>
       prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo))
     );
@@ -27,10 +24,6 @@ function App() {
   };
 
   const toggleComplete = (id) => {
-    //you simply need to toggle the is completed propety if the todo.
-    //so we are taking up the id and matching it with the todo id and
-    //toggling its complete property.
-
     setTodos((prev) =>
       prev.map((prevTodo) =>
         prevTodo.id === id
@@ -40,12 +33,8 @@ function App() {
     );
   };
 
-  //and till here the functionalithy for the context is finished
-  //and now we will start the local storage functionality from here.
-
   useEffect(() => {
     const todoData = JSON.parse(localStorage.getItem("todos"));
-
     if (todoData && todoData.length > 0) {
       setTodos(todoData);
     }
@@ -56,25 +45,21 @@ function App() {
   }, [todos]);
 
   return (
-    <TodoProvider
-      value={{ todos, addTodo, removeTodo, updateTodo, toggleComplete }}
-    >
-      <TodoForm />
+    <TodoProvider value={{ todos, addTodo, removeTodo, updateTodo, toggleComplete }}>
+      <div className="container">
+        <TodoForm />
 
-      {todos.map((todo) => (
-        <div key={todo.id}>
-          <TodoItem todo={todo} />
+        <div className="todo-list-container">
+          {todos.map((todo) => (
+            <div key={todo.id}>
+              <TodoItem todo={todo} />
+            </div>
+          ))}
         </div>
-      ))}
-
-      {/*  {todos.map((todo) => (
-        <div key={todo.id}>
-          <TodoItem todo={todo} />
-        </div>
-      ))}
-       */}
+      </div>
     </TodoProvider>
   );
 }
 
 export default App;
+

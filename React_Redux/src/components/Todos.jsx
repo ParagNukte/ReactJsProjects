@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeTodo, updateTodo } from "../features/todo/todoSlice";
+import { removeTodo } from "../features/todo/todoSlice";
 
 function Todos() {
   const [editTodoId, setEditTodoId] = useState(null);
@@ -9,7 +9,8 @@ function Todos() {
   const dispatch = useDispatch();
 
   const onChangeText = (id, newText) => {
-    dispatch(updateTodo({ id, text: newText }));
+    // dispatch(updateTodo({ id, text: newText }));
+    console.log("Heeloo Its to update");
   };
 
   const handleEdit = (id) => {
@@ -19,7 +20,6 @@ function Todos() {
 
   return (
     <div className="todos-container">
-      
       <ul className="todos-list">
         {todos.map((todo) => (
           <li key={todo.id} className="todo-item">
@@ -36,15 +36,24 @@ function Todos() {
               )}
               <span className="feature-buttons">
                 {isEdited && editTodoId === todo.id ? (
-                  <button className="save-button" onClick={() => setIsEdited(false)}>
+                  <button
+                    className="save-button"
+                    onClick={() => setIsEdited(false)}
+                  >
                     Save
                   </button>
                 ) : (
-                  <button className="edit-button" onClick={() => handleEdit(todo.id)}>
+                  <button
+                    className="edit-button"
+                    onClick={() => handleEdit(todo.id)}
+                  >
                     Edit
                   </button>
                 )}
-                <button className="delete-button" onClick={() => dispatch(removeTodo(todo.id))}>
+                <button
+                  className="delete-button"
+                  onClick={() => dispatch(removeTodo(todo.id))}
+                >
                   Delete
                 </button>
               </span>

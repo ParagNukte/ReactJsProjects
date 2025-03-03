@@ -33,24 +33,6 @@ function Login() {
       : (setEmailErrorFlag(true), setEmailId(id));
   };
 
-  // const handleChange = (event) => {
-  //   let inputValue = event.target.value;
-
-  //   const regex = new RegExp(/[^0-9]/g);
-  //   inputValue = inputValue.replace(regex, "");
-
-  //   const validRegex = /^(?:\+91)?[6789]\d{9}$/;
-  //   // const regex = new RegExp(`^[0-9]{${10},${10}}$`);
-
-  //   if (validRegex.test(inputValue)) {
-  //     setNumberErrorFlag(false);
-  //   } else {
-  //     event.preventDefault();
-  //     setNumberErrorFlag(true);
-  //   }
-  //   return inputValue;
-  // };
-
   const handleChange = (event) => {
     const trimmedValue = event.target.value.trim(); // Trim whitespace
     setMobileNumber(trimmedValue);
@@ -86,15 +68,8 @@ function Login() {
       <div className="parentContainer">
         <h1>Lets get Started</h1>
         <div className="container">
-          <div>
-            Join my e-learning platform for your benifit in the industry to
-            withstand ion the todays ongoing competition. Our courses are famous
-            WorldWide. Pehle istemaal kare fir vishwas kre is our policy as we
-            provide 1 month of trial fromt he date of registraition a nominal
-            fees of registration.{" "}
-          </div>
+          <div>Note - I have designed a Login form with basic validations.</div>
           <div className="sectionContanier">
-            
             <aside>
               <form action="submit" className="formContanier">
                 <label htmlFor="name" required className="firstname">
@@ -148,7 +123,7 @@ function Login() {
               </form>
             </aside>
             <aside className="imageSection">
-              <img src="../../../public/RadhaKrishna.jpg" alt="" />
+              <img src="/Login.png" alt="" />
             </aside>
           </div>
         </div>

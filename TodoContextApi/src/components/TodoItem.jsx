@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTodo } from "../contexts/TodoContexts";
-
+import "./todoitem.css"
 function TodoItem({ todo }) {
   //todo in props is aquired from TodoContext file "" todos ""
   const [isEditable, setIsEditable] = useState(false);
@@ -17,13 +17,7 @@ function TodoItem({ todo }) {
 
   return (
     <>
-      <div
-        style={
-          todo.isCompleted
-            ? { backgroundColor: "red" }
-            : { backgroundColor: "white" }
-        }
-      >
+      <div className={`todo-item ${todo.isCompleted ? "completed" : ""}`}>
         <input
           type="checkbox"
           checked={todo.isCompleted}
@@ -49,7 +43,9 @@ function TodoItem({ todo }) {
         >
           {isEditable ? "Save" : "Edit"}
         </button>
-        <button onClick={() => removeTodo(todo.id)}>Delete</button>
+        <button className="delete" onClick={() => removeTodo(todo.id)}>
+          Delete
+        </button>
       </div>
     </>
   );

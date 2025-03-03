@@ -1,23 +1,20 @@
-import { useContext, useState } from "react";
-import UserContext from "./Contexts";
+import { useState } from "react";
 import EditProfile from "./EditProfile";
 
 function Profile() {
-  const { userName } = useContext(UserContext);
-  const [editProfileUseNameFlag, setEditProfileUseNameFlag] = useState(false);
+  const [isEditingProfile, setIsEditingProfile] = useState(false);
+
+  const toggleEditProfile = () => setIsEditingProfile((prev) => !prev);
+
   return (
-    <>
-      <div>My Username Is {userName}</div>
-      <button
-        type="button"
-        onClick={() => setEditProfileUseNameFlag(!editProfileUseNameFlag)}
-      >
-        Edit Profile userName
+    <div >
+      <button type="button" onClick={toggleEditProfile} >
+        Edit Profile Username
       </button>
-      <div>
-        {editProfileUseNameFlag ? <EditProfile/>:""}
-      </div>
-    </>
+      {isEditingProfile && (
+        <EditProfile setIsEditingProfile={setIsEditingProfile} />
+      )}
+    </div>
   );
 }
 

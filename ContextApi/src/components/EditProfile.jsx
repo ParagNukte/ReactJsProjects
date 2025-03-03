@@ -1,9 +1,8 @@
+import PropTypes from "prop-types";
 import { useContext, useState } from "react";
 import UserContext from "./Contexts";
-
-function EditProfile() {
+function EditProfile({ setIsEditingProfile }) {
   const { setUserName } = useContext(UserContext);
-
   const [newUserName, setNewUserName] = useState("");
 
   const handleChange = (e) => {
@@ -14,17 +13,25 @@ function EditProfile() {
     e.preventDefault();
     setUserName(newUserName);
   };
+
   return (
     <>
-      <div>
+      <div onBlur={() => setIsEditingProfile(false)}>
         <form action="submit" onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange} value={newUserName} />
-        <button type="submit" >
-          Update UserName
-        </button></form>
+          <input
+            type="text"
+            onChange={handleChange}
+            value={newUserName}
+            className="inputbox"
+          />
+          <button type="submit">Update UserName</button>
+        </form>
       </div>
     </>
   );
 }
 
+EditProfile.propTypes = {
+  setIsEditingProfile: PropTypes.func.isRequired,
+};
 export default EditProfile;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTodo } from "../contexts/TodoContexts";
-
+import "./todoform.css"
 function TodoForm() {
   const [todo, setTodo] = useState("");
   const { addTodo } = useTodo();
@@ -14,7 +14,7 @@ function TodoForm() {
   };
   return (
     <>
-      <form onSubmit={add}>
+      <form onSubmit={add} className="todo-form">
         <input
           type="text"
           placeholder="Enter the msg"

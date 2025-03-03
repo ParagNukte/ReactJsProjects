@@ -5,7 +5,7 @@ function App() {
   const [userName, setUserName] = useState("Parag");
   return (
     <>
-      <UserContext.Provider value={{userName, setUserName }}>
+      <UserContext.Provider value={{ userName, setUserName }}>
         <Card />
       </UserContext.Provider>
     </>

@@ -1,32 +1,28 @@
 import { useState } from "react";
 import Profile from "./Profile";
-import "../App.css"
-function NavBar() {
+import "../App.css";
 
-    const [flagProfile, setFlagProfile] = useState(false);
+function NavBar() {
+  const [flagProfile, setFlagProfile] = useState(false);
+
+  const menuItems = ["Home", "About", "Desk", "Computer"];
+
+  const toggleProfile = () => setFlagProfile((prevFlag) => !prevFlag);
 
   return (
     <>
-      <div>
-        <li className="NavItems">
-          <ul>
-            <button onClick={() => setFlagProfile(!flagProfile)}>Home</button>
-          </ul>
-          <ul>
-            <button>About</button>
-          </ul>
-          <ul>
-            <button>Desk</button>
-          </ul>
-          <ul>
-            <button>Computer</button>
-          </ul>
-        </li>
-      </div>
-
-      {flagProfile ?  <Profile/>: null }
-
-      {console.log(flagProfile)}
+      <nav>
+        <ul className="NavItems">
+          {menuItems.map((item, index) => (
+            <li key={index}>
+              <button onClick={item === "Home" ? toggleProfile : null}>
+                {item}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      {flagProfile && <Profile />}
     </>
   );
 }

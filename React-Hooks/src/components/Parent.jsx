@@ -3,7 +3,7 @@ import Child from "./UseContext/Child";
 function Parent() {
   return (
     <div>
-      Fuck Im Parent
+       Im Parent
       <Child />
     </div>
   );

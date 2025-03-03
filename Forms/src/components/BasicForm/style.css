@@ -4,7 +4,8 @@
   box-shadow: 10px 10px 10px 0 rgba(181, 139, 139, 0.4);
 
   padding: 3%;
-  width: 40em; /* Combine with .container */
+  width: 40em;
+  /* Combine with .container */
 }
 
 .sectionContanier {
@@ -19,7 +20,7 @@
   flex-direction: column;
 }
 
-.formContanier > * {
+.formContanier>* {
   padding: 0.4em 0.3em;
 }
 
@@ -31,12 +32,15 @@ label {
 
 .formContanier input {
   margin-left: 3%;
-  width: 80%; /* Adjust for select if needed */
+  width: 80%;
+  /* Adjust for select if needed */
 }
-select{
+
+select {
   margin-left: 3%;
   width: 84%;
 }
+
 button {
   margin: 5%;
   box-shadow: 3px 3px 3px 1px rgba(60, 56, 56, 0.4);
@@ -48,6 +52,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 3rem;
 }
 
 img {
